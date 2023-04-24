@@ -1,3 +1,4 @@
+// o: is this being used?
 export function countAndFilter(products) {
   const count = {};
   const filteredProducts = [];

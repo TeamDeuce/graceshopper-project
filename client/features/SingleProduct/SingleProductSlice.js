@@ -28,6 +28,9 @@ const singleProductSlice = createSlice({
     builder.addCase(fetchSingleProductAsync.fulfilled, (state, action) => {
       return action.payload;
     });
+
+    // o: if you don't need this, then remove
+
     // dont think we need this, don't want to udate single product state
     // builder.addCase(addProductToCartAsync.fulfilled, (state, action) => {
     //   return action.payload;

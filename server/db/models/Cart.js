@@ -9,6 +9,7 @@ const Cart = db.define('cart', {
   },
 });
 
+// o: what is this accomplishing exactly?
 const createAndAssignNewCartAfterCheckout = async (cart) => {
   if (cart.complete) {
     const cartWithUser = await Cart.findByPk(cart.id, { include: User });

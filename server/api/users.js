@@ -8,7 +8,11 @@ const { requireToken, isAdmin } = require("./gatekeepingMiddleware.js");
 router.get("/", requireToken, isAdmin, async (req, res, next) => {
   try {
     //Non-admins are unable to view all users in the system
+
+    // o: you can setup your middleware to do automatically send this message on every request
+    //  instead of hardcoding in everything route
     if (!req.user.isAdmin) {
+      // o: 😂... also good work returning here
       return res
         .status(403)
         .send(

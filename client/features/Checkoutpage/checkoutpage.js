@@ -39,6 +39,7 @@ const Checkout = () => {
     dispatch(editQuantityAsync({ userId, productId, plusOrMinus }));
   };
 
+  // o: you don't have to prefix with React. here
   React.useEffect(() => {
     const userId = cart.userId;
     dispatch(fetchCartAsync({ userId }));

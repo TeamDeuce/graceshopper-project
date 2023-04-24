@@ -7,6 +7,7 @@ const router = require("express").Router();
 const {
   models: { Product },
 } = require("../db");
+
 const { requireToken, isAdmin } = require("./gatekeepingMiddleware.js");
 
 router.get("/", async (req, res, next) => {

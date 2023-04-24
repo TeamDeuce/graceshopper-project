@@ -35,6 +35,8 @@ router.post('/', async (req, res, next) => {
   try {
     const { userId, productId } = req.body;
 
+    // o: you can simplify this route by using a Cart.findOrCreate below
+
     // find cart associated with user
     const cart = await Cart.findOne({
       where: {
@@ -82,6 +84,7 @@ router.delete('/', async (req, res, next) => {
       where: { cartId: cartId, productId: productId },
     });
     await cartItem.destroy();
+
 
     // refetch updated cart
     const newCart = await Cart.findOne({
